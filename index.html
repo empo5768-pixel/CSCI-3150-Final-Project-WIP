@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Boulder Valley Honey Accessible Demo</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      line-height: 1.6;
+    }
+
+    /* Skip link */
+    .skip-link {
+      position: absolute;
+      top: -40px;
+      left: 10px;
+      background: white;
+      padding: 10px;
+      border: 2px solid black;
+    }
+
+    .skip-link:focus {
+      top: 10px;
+    }
+
+    /* Focus styles */
+    a:focus, button:focus {
+      outline: 3px solid blue;
+      background-color: #e0f0ff;
+    }
+
+    header {
+      background: #fff5e6;
+      padding: 20px;
+      border-bottom: 3px solid orange;
+    }
+
+    nav a {
+      margin-right: 15px;
+      font-weight: bold;
+      text-decoration: none;
+      color: black;
+    }
+
+    main {
+      padding: 20px;
+    }
+
+    .card {
+      border: 1px solid #ccc;
+      padding: 15px;
+      margin: 10px 0;
+    }
+
+    button {
+      background: orange;
+      color: white;
+      padding: 10px;
+      border: none;
+      cursor: pointer;
+    }
+  </style>
+</head>
+
+<body>
+
+<!-- Skip Navigation -->
+<a href="#main" class="skip-link">Skip to main content</a>
+
+<header>
+  <h1>Boulder Valley Honey</h1>
+
+  <nav>
+    <a href="#shop">Shop</a>
+    <a href="#about">About</a>
+    <a href="#contact">Contact</a>
+  </nav>
+</header>
+
+<main id="main">
+
+  <h2>Our Honey Products</h2>
+
+  <div class="card">
+    <h3>Wildflower Honey</h3>
+    <p>Local honey from Colorado wildflowers.</p>
+    <button aria-label="Add Wildflower Honey to cart">Add to Cart</button>
+  </div>
+
+  <div class="card">
+    <h3>Clover Honey</h3>
+    <p>Light, smooth honey variety.</p>
+    <button aria-label="Add Clover Honey to cart">Add to Cart</button>
+  </div>
+
+  <!-- Moving Content Fix -->
+  <h2>Featured Product</h2>
+  <button onclick="togglePause()">Pause</button>
+
+  <p id="featured">Featured: Wildflower Honey</p>
+
+  <!-- About -->
+  <h2 id="about">About Us</h2>
+  <p>We provide sustainable, locally sourced honey.</p>
+
+  <!-- Image with Alt Text -->
+  <img src="https://via.placeholder.com/300" alt="Jar of local honey with dipper">
+
+  <!-- Contact Form -->
+  <h2 id="contact">Contact Us</h2>
+
+  <form>
+    <label for="name">Name:</label>
+    <input id="name" type="text" required><br><br>
+
+    <label for="email">Email:</label>
+    <input id="email" type="email" required><br><br>
+
+    <button type="submit">Send Message</button>
+  </form>
+
+</main>
+
+<script>
+let paused = false;
+let products = [
+  "Featured: Wildflower Honey",
+  "Featured: Clover Honey",
+  "Featured: Gift Set"
+];
+
+let index = 0;
+
+function rotate() {
+  if (!paused) {
+    index = (index + 1) % products.length;
+    document.getElementById("featured").innerText = products[index];
+  }
+}
+
+setInterval(rotate, 3000);
+
+function togglePause() {
+  paused = !paused;
+}
+</script>
+
+</body>
+</html>
