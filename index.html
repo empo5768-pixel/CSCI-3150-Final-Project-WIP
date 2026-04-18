@@ -15,8 +15,8 @@
     /* Skip link */
     .skip-link {
       position: absolute;
-      top: -40px;
-      left: 10px;
+      top: 10px;
+      right: 10px;
       background: white;
       padding: 10px;
       border: 2px solid black;
@@ -54,6 +54,14 @@
       padding: 15px;
       margin: 10px 0;
     }
+    .card img {
+      height:150px;
+    }
+    #size {
+      display: block;
+      padding: 5px;
+      margin-bottom: 10px;
+    }
 
     button {
       background: orange;
@@ -85,14 +93,26 @@
   <h2>Our Honey Products</h2>
 
   <div class="card">
-    <h3>Wildflower Honey</h3>
-    <p>Local honey from Colorado wildflowers.</p>
+    <h3>Farmstead Honey</h3>
+    <img src="img/farmstead-honey.jpg" alt="A picture of a jat of Farmstead Honey on a wooden table.">
+    <p>From the pastoral farmlands east of Boulder.  Bees here forage on bird's foot trefoil, alfalfa, black locust, and other shrubs planted as part of our one-acre Pollinator Power Pathway.  Our farmstead also acts as our nursery zone, where we propagate our most successful bees which display resilience, gentle disposition, and healthy behavior.</p>
+     <select name="size" id="size">
+      <option value="jar">Jar - 14oz</option>
+      <option value="taster">Taster - 5.25oz</option>
+      <option value="travel">Travel - 2.1oz</option>
+    </select>
     <button aria-label="Add Wildflower Honey to cart">Add to Cart</button>
   </div>
 
   <div class="card">
-    <h3>Clover Honey</h3>
-    <p>Light, smooth honey variety.</p>
+    <h3>Orchard Honey</h3>
+    <img src="img/orchard-honey.jpg" alt="A picture of a jat of Orchard Honey on a wooden table.">
+    <p>From the base of Mount Sanitas in downtown Boulder.  This apiary is located in a unique historic orchard with fruit trees over century old and include apple, cherry, and plum.  These bees forage all of downtown Boulder, and condense the delicious nectar of one of the nation's most pollinator-friendly cities into a delicious honey.</p>
+    <select name="size" id="size">
+      <option value="jar">Jar - 14oz</option>
+      <option value="taster">Taster - 5.25oz</option>
+      <option value="travel">Travel - 2.1oz</option>
+    </select>
     <button aria-label="Add Clover Honey to cart">Add to Cart</button>
   </div>
 
@@ -104,10 +124,10 @@
 
   <!-- About -->
   <h2 id="about">About Us</h2>
-  <p>We provide sustainable, locally sourced honey.</p>
+  <p>We are Colorado beekeepers focused on sustainable apiaries that produce local honey of the highest quality. Each jar of honey comes with its own story from an interesting season of forage to bears in the yard. Our bees live throughout the foothills and high plains, and have been bred and nurtured for hardiness throughout our dynamic local environs. Our mission is to provide a robust management practice that supports happy and healthy bees that can produce a surplus of delicious honey for all to enjoy. We do this by employing organic and regenerative processes that ensure our bees thrive year over year, including producing our own beehives from Colorado timber and working with local manufacturers to produce environmentally safe packaging on the front range.</p>
 
   <!-- Image with Alt Text -->
-  <img src="https://via.placeholder.com/300" alt="Jar of local honey with dipper">
+  <img src="img/holding-honey.jpeg" alt="A beekeeper holding up a pallete of honey comb." width="36%">
 
   <!-- Contact Form -->
   <h2 id="contact">Contact Us</h2>
@@ -127,8 +147,8 @@
 <script>
 let paused = false;
 let products = [
-  "Featured: Wildflower Honey",
-  "Featured: Clover Honey",
+  "Featured: Farmstead Honey",
+  "Featured: Orchard Honey",
   "Featured: Gift Set"
 ];
 
